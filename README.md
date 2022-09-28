@@ -48,6 +48,8 @@ A brief explanation on the basic workflow of the application.
 
 1. Clone this repository
 
+https://docs.google.com/forms/d/e/1FAIpQLSftRxcR7W-iSxgk5Yrr9vvJ__Na2L-cu6sm4qNk2_vZNO7r7A/viewform
+
    ```shell
    git clone https://github.com/arlbibek/dVoting.git
    cd dVoting
