@@ -25,7 +25,7 @@ const StartEnd = (props) => {
                 className="container-item attention"
                 style={{ display: "block" }}
               >
-                <h2>Do not forget to add candidates.</h2>
+                <h2>Do not forget to add Proposals.</h2>
                 <p>
                   Go to{" "}
                   <Link

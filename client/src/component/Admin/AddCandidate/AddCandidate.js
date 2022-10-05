@@ -19,7 +19,6 @@ export default class AddCandidate extends Component {
       accounts: null,
       isAdmin: false,
       header: "",
-      slogan: "",
       candidates: [],
       candidateCount: undefined,
     };
@@ -73,7 +72,6 @@ export default class AddCandidate extends Component {
         this.state.candidates.push({
           id: candidate.candidateId,
           header: candidate.header,
-          slogan: candidate.slogan,
         });
       }
 
@@ -89,13 +87,11 @@ export default class AddCandidate extends Component {
   updateHeader = (event) => {
     this.setState({ header: event.target.value });
   };
-  updateSlogan = (event) => {
-    this.setState({ slogan: event.target.value });
-  };
+
 
   addCandidate = async () => {
     await this.state.ElectionInstance.methods
-      .addCandidate(this.state.header, this.state.slogan)
+      .addCandidate(this.state.header)
       .send({ from: this.state.account, gas: 1000000 });
     window.location.reload();
   };
@@ -121,8 +117,8 @@ export default class AddCandidate extends Component {
       <>
         <NavbarAdmin />
         <div className="container-main">
-          <h2>Add a new proposal</h2>
-          <small>Total options: {this.state.candidateCount}</small>
+          <h2>Add a new candidate</h2>
+          <small>Total candidates: {this.state.candidateCount}</small>
           <div className="container-item">
             <form className="form">
               <label className={"label-ac"}>
@@ -133,16 +129,6 @@ export default class AddCandidate extends Component {
                   placeholder="eg. Marcus"
                   value={this.state.header}
                   onChange={this.updateHeader}
-                />
-              </label>
-              <label className={"label-ac"}>
-                Slogan
-                <input
-                  className={"input-ac"}
-                  type="text"
-                  placeholder="eg. It is what it is"
-                  value={this.state.slogan}
-                  onChange={this.updateSlogan}
                 />
               </label>
               <button
@@ -174,7 +160,7 @@ export function loadAdded(candidates) {
             }}
           >
             {candidate.id}. <strong>{candidate.header}</strong>:{" "}
-            {candidate.slogan}
+
           </div>
         </div>
       </>
@@ -183,18 +169,18 @@ export function loadAdded(candidates) {
   return (
     <div className="container-main" style={{ borderTop: "1px solid" }}>
       <div className="container-item info">
-        <center>Proposal List</center>
+        <center>Candidates List</center>
       </div>
       {candidates.length < 1 ? (
         <div className="container-item alert">
-          <center>No proposal added.</center>
+          <center>No candidates added.</center>
         </div>
       ) : (
         <div
           className="container-item"
           style={{
             display: "block",
-            backgroundColor: "#ffffff",
+            backgroundColor: "#DDFFFF",
           }}
         >
           {candidates.map(renderAdded)}
