@@ -121,8 +121,8 @@ export default class AddCandidate extends Component {
       <>
         <NavbarAdmin />
         <div className="container-main">
-          <h2>Add a new candidate</h2>
-          <small>Total candidates: {this.state.candidateCount}</small>
+          <h2>Add a new proposal</h2>
+          <small>Total options: {this.state.candidateCount}</small>
           <div className="container-item">
             <form className="form">
               <label className={"label-ac"}>
@@ -183,18 +183,18 @@ export function loadAdded(candidates) {
   return (
     <div className="container-main" style={{ borderTop: "1px solid" }}>
       <div className="container-item info">
-        <center>Candidates List</center>
+        <center>Proposal List</center>
       </div>
       {candidates.length < 1 ? (
         <div className="container-item alert">
-          <center>No candidates added.</center>
+          <center>No proposal added.</center>
         </div>
       ) : (
         <div
           className="container-item"
           style={{
             display: "block",
-            backgroundColor: "#DDFFFF",
+            backgroundColor: "#ffffff",
           }}
         >
           {candidates.map(renderAdded)}
