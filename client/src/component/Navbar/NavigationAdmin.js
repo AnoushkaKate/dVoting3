@@ -23,7 +23,7 @@ export default function NavbarAdmin() {
         </li>
         <li>
           <NavLink to="/AddCandidate" activeClassName="nav-active">
-            Add Candidate
+            Add Proposal
           </NavLink>
         </li>
         <li>
