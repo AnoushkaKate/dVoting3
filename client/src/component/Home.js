@@ -250,12 +250,12 @@ export default class Home extends Component {
                       </label>
 
                       <label className="label-home">
-                        Job Title or Position{" "}
+                      Occupation{" "}
                         {errors.adminTitle && <EMsg msg="*required" />}
                         <input
                           className="input-home"
                           type="text"
-                          placeholder="eg. HR Head "
+                          placeholder="eg. Student "
                           {...register("adminTitle", {
                             required: true,
                           })}
@@ -275,7 +275,7 @@ export default class Home extends Component {
                         <input
                           className="input-home"
                           type="text"
-                          placeholder="eg. School Election"
+                          placeholder="eg. Term 1, Week 1 Election"
                           {...register("electionTitle", {
                             required: true,
                           })}
@@ -287,7 +287,7 @@ export default class Home extends Component {
                         <input
                           className="input-home"
                           type="text"
-                          placeholder="eg. Lifeline Academy"
+                          placeholder="eg. Marist College"
                           {...register("organizationTitle", {
                             required: true,
                           })}

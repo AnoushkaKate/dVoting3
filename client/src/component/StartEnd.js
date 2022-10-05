@@ -36,7 +36,7 @@ const StartEnd = (props) => {
                       textDecoration: "underline",
                     }}
                   >
-                    add candidates
+                    add proposal
                   </Link>{" "}
                   page.
                 </p>
@@ -66,7 +66,7 @@ const StartEnd = (props) => {
         <>
           <div className="container-item">
             <center>
-              <p>The election started.</p>
+              <p>The election started!</p>
             </center>
           </div>
           <div className="container-item">
