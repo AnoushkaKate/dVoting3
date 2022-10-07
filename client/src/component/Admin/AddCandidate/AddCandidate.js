@@ -169,11 +169,11 @@ export function loadAdded(candidates) {
   return (
     <div className="container-main" style={{ borderTop: "1px solid" }}>
       <div className="container-item info">
-        <center>Candidates List</center>
+        <center>Proposals List</center>
       </div>
       {candidates.length < 1 ? (
         <div className="container-item alert">
-          <center>No candidates added.</center>
+          <center>No Proposals added.</center>
         </div>
       ) : (
         <div

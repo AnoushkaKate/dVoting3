@@ -186,10 +186,10 @@ export function displayResults(candidates) {
       ) : null}
       <div className="container-main" style={{ borderTop: "1px solid" }}>
         <h2>Results</h2>
-        <small>Total candidates: {candidates.length}</small>
+        <small>Total Proposals: {candidates.length}</small>
         {candidates.length < 1 ? (
           <div className="container-item attention">
-            <center>No candidates.</center>
+            <center>No Proposals.</center>
           </div>
         ) : (
           <>
@@ -197,7 +197,7 @@ export function displayResults(candidates) {
               <table>
                 <tr>
                   <th>Id</th>
-                  <th>Candidate</th>
+                  <th>Proposal</th>
                   <th>Votes</th>
                 </tr>
                 {candidates.map(renderResults)}
