@@ -117,8 +117,8 @@ export default class AddCandidate extends Component {
       <>
         <NavbarAdmin />
         <div className="container-main">
-          <h2>Add a new candidate</h2>
-          <small>Total candidates: {this.state.candidateCount}</small>
+          <h2>Add a new Proposal</h2>
+          <small>Total Proposals: {this.state.candidateCount}</small>
           <div className="container-item">
             <form className="form">
               <label className={"label-ac"}>
@@ -126,7 +126,7 @@ export default class AddCandidate extends Component {
                 <input
                   className={"input-ac"}
                   type="text"
-                  placeholder="eg. Marcus"
+                  placeholder="eg. Add shorts to the school uniform"
                   value={this.state.header}
                   onChange={this.updateHeader}
                 />
@@ -134,7 +134,7 @@ export default class AddCandidate extends Component {
               <button
                 className="btn-add"
                 disabled={
-                  this.state.header.length < 3 || this.state.header.length > 21
+                  this.state.header.length < 3
                 }
                 onClick={this.addCandidate}
               >
@@ -180,7 +180,7 @@ export function loadAdded(candidates) {
           className="container-item"
           style={{
             display: "block",
-            backgroundColor: "#DDFFFF",
+            backgroundColor: "#a7dfff91",
           }}
         >
           {candidates.map(renderAdded)}

@@ -25,12 +25,12 @@ export default class Registration extends Component {
       isElEnded: false,
       voterCount: undefined,
       voterName: "",
-      voteryearLevel: "",
+      voterIdNumber: "",
       voters: [],
       currentVoter: {
         address: undefined,
         name: null,
-        yearLevel: null,
+        IdNumber: null,
         hasVoted: false,
         isVerified: false,
         isRegistered: false,
@@ -96,7 +96,7 @@ export default class Registration extends Component {
         this.state.voters.push({
           address: voter.voterAddress,
           name: voter.name,
-          yearLevel: voter.yearLevel,
+          IdNumber: voter.IdNumber,
           hasVoted: voter.hasVoted,
           isVerified: voter.isVerified,
           isRegistered: voter.isRegistered,
@@ -112,7 +112,7 @@ export default class Registration extends Component {
         currentVoter: {
           address: voter.voterAddress,
           name: voter.name,
-          yearLevel: voter.yearLevel,
+          IdNumber: voter.IdNumber,
           hasVoted: voter.hasVoted,
           isVerified: voter.isVerified,
           isRegistered: voter.isRegistered,
@@ -129,12 +129,12 @@ export default class Registration extends Component {
   updateVoterName = (event) => {
     this.setState({ voterName: event.target.value });
   };
-  updateVoteryearLevel = (event) => {
-    this.setState({ voteryearLevel: event.target.value });
+  updateVoterIdNumber = (event) => {
+    this.setState({ voterIdNumber: event.target.value });
   };
   registerAsVoter = async () => {
     await this.state.ElectionInstance.methods
-      .registerAsVoter(this.state.voterName, this.state.voteryearLevel)
+      .registerAsVoter(this.state.voterName, this.state.voterIdNumber)
       .send({ from: this.state.account, gas: 1000000 });
     window.location.reload();
   };
@@ -187,26 +187,26 @@ export default class Registration extends Component {
                   </div>
                   <div className="div-li">
                     <label className={"label-r"}>
-                    Year Level number <span style={{ color: "tomato" }}>*</span>
+                    Id Number <span style={{ color: "tomato" }}>*</span>
                       <input
                         className={"input-r"}
                         type="number"
-                        placeholder="eg. 12"
-                        value={this.state.voteryearLevel}
-                        onChange={this.updateVoteryearLevel}
+                        placeholder="eg. 12050"
+                        value={this.state.voterIdNumber}
+                        onChange={this.updateVoterIdNumber}
                       />
                     </label>
                   </div>
                   <p className="note">
                     <span style={{ color: "tomato" }}> Note: </span>
-                    <br /> Make sure your year level is 2 digits e.g 09<br /> Admin might not approve your account if the
-                    provided Year Level number nub does not matches the account
+                    <br /> Make sure your  is 5 digits e.g 09<br /> Admin might not approve your account if the
+                    provided Id Number does not match the account
                     address registered in admins catalogue.
                   </p>
                   <button
                     className="btn-add"
                     disabled={
-                      this.state.voteryearLevel.length !== 2 ||
+                      this.state.voterIdNumber.length !== 2 ||
                       this.state.currentVoter.isVerified
                     }
                     onClick={this.registerAsVoter}
@@ -267,8 +267,8 @@ export function loadCurrentVoter(voter, isRegistered) {
             <td>{voter.name}</td>
           </tr>
           <tr>
-            <th>Year Level</th>
-            <td>{voter.yearLevel}</td>
+            <th>Id Number</th>
+            <td>{voter.IdNumber}</td>
           </tr>
           <tr>
             <th>Voted</th>
@@ -302,8 +302,8 @@ export function loadAllVoters(voters) {
               <td>{voter.name}</td>
             </tr>
             <tr>
-              <th>Year Level</th>
-              <td>{voter.yearLevel}</td>
+              <th>Id Number</th>
+              <td>{voter.IdNumber}</td>
             </tr>
             <tr>
               <th>Voted</th>

@@ -36,7 +36,7 @@ const StartEnd = (props) => {
                       textDecoration: "underline",
                     }}
                   >
-                    add proposal
+                    Add Proposal
                   </Link>{" "}
                   page.
                 </p>
